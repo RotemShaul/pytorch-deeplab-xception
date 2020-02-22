@@ -8,7 +8,7 @@ from torchvision import transforms
 from dataloaders import custom_transforms as tr
 
 class CityscapesSegmentation(data.Dataset):
-    NUM_CLASSES = 1
+    NUM_CLASSES = 2
 
     def __init__(self, args, root=Path.db_root_dir('cityscapes'), split="train"):
 
@@ -23,9 +23,9 @@ class CityscapesSegmentation(data.Dataset):
         self.files[split] = self.recursive_glob(rootdir=self.images_base, suffix='.png')
 
         self.void_classes = [0, 1, 2, 3, 4, 5, 6, 9, 10, 14, 15, 16, 18, 29, 30, -1,
-                             7, 8, 11, 12, 13, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33]
-        self.valid_classes = [17]
-        self.class_names = ['unlabelled', 'pole']
+                             7, 8, 11, 12, 13, 19, 20, 21, 22, 24, 25, 26, 27, 28, 31, 32, 33]
+        self.valid_classes = [17, 23]
+        self.class_names = ['unlabelled', 'pole', 'sky']
 
         # self.class_names = ['unlabelled', 'road', 'sidewalk', 'building', 'wall', 'fence', \
         #                    'pole', 'traffic_light', 'traffic_sign', 'vegetation', 'terrain', \
