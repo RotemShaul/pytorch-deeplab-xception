@@ -1,11 +1,11 @@
-#BSUB -J deeplabv3
+#BSUB -J 2_deeplabv3
 #BSUB -env LSB_CONTAINER_IMAGE=ibdgx001:5000/py19.07-py3-test_fuse_rs:12charm_tb1
-#BSUB -q waic-short
+#BSUB -q waic-long
 #BSUB -gpu num=1:j_exclusive=yes
 #BSUB -app uc4
 #BSUB -R rusage[mem=32000]
-#BSUB -oo ot_out_train.log
-#BSUB -eo et_err_train.log
+#BSUB -oo 2_ot_out_train.log
+#BSUB -eo 2_et_err_train.log
 /home/labs/waic/rotems/code/pytorch-deeplab-xception/cityscape_train.sh
 
 
