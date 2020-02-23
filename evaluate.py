@@ -261,8 +261,7 @@ def main():
     print(args)
     torch.manual_seed(args.seed)
     trainer = Trainer(args)
-    print('Starting Epoch:', trainer.args.start_epoch)
-    print('Total Epoches:', trainer.args.epochs)
+    print('Starting Testing')
 
     trainer.validation(epoch=0)
 
