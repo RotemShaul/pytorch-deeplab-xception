@@ -108,7 +108,7 @@ class Trainer(object):
                                    3, normalize=False, range=(0, 255))
             print("type(grid) is: ", type(grid_image))
             print("grid_image.shape is: ", grid_image.shape)
-            save_image(grid_image, args.out_path)
+            save_image(grid_image, self.args.out_path + 'prediction_' + str(i) + '.png')
 
             loss = self.criterion(output, target)
             test_loss += loss.item()
