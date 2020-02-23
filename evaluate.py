@@ -14,6 +14,7 @@ from utils.saver import Saver
 from utils.summaries import TensorboardSummary
 from utils.metrics import Evaluator
 from torchvision.utils import make_grid, save_image
+from dataloaders.utils import *
 
 class Trainer(object):
     def __init__(self, args):
